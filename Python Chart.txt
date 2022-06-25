@@ -1,0 +1,139 @@
+Dataset 
+	Movie dataset
+	tip dataset
+	Master chart in python
+
+
+
+
+
+To Load the data into Power BI Through Python Script
+
+Go To Home --> Get Data -> Others -> python Script
+
+In Script Enter Below Code
+
+import pandas as pd
+my_data = pd.read_csv("D:\\DataScience\\Power BI\\Edureka\\Batch 1\tips.csv")
+
+
+
+-------------------------------------------------------------------------------------
+					PYTHON CHART
+-------------------------------------------------------------------------------------
+
+Check Python Setup :
+
+python --version
+pip install matplotlib 
+
+-------------------------------------------------------------------------------------
+Step 1 : 
+	Upload tip dataset into Power BI Desktop
+Step 2 :
+	Click on Python Visual 
+Step 3 :
+	Then Bring all fields onto Values
+
+Step 4 :
+	
+	Run Below Query in Python Script Editor 
+
+	import matplotlib.pyplot as plt
+	import seaborn as sns
+	sns.catplot(x="smoker", y="tip", order=["No", "Yes"], data=dataset);
+	plt.show() 
+
+Refer master Charts in Python cheatsheet for other Visuals
+
+
+Python Chart 1 :
+
+Step 1 : 
+	Upload movieset dataset into Power BI Desktop
+
+Step 2 : 
+	Drag field 
+	Total.Gross.Theaters2 
+	Revenue
+
+Step 3 :
+	Run Below Query in Python Script Editor 
+		import matplotlib.pyplot as plt 
+		import seaborn as sns 
+		sns.violinplot(x='Revenue',y='Total Gross Theaters2',data=dataset) 
+		plt.show() 
+
+
+
+Python Chart 2 :
+Drag field 
+	Total.Gross.Theaters2 , 
+	Total.Gross.Theaters2, 
+	Opening.Theaters, 
+	Revenue 
+
+
+
+
+----------------------------------------------------------------------------------------
+
+
+pandas.excel_read()
+
+Should be in Rstudio
+install.packages("ggplot2")
+install.packages("corrplot")
+
+
+
+RSTUDIO TO DOWNLOAD
+https://cran.r-project.org/bin/windows/base/
+https://www.rstudio.com/products/rstudio/download/#download
+
+
+R Script Chart 1 :
+
+Drag field 
+	Total.Gross.Theaters2 
+
+library(ggplot2) 
+chol<-(dataset)
+hist(chol$"Total Gross Theaters2") 
+
+
+R Script Chart 2 :
+
+Drag Field :
+	Total.Gross.Theathers, 
+	Total.Gross.Theathers2 
+
+chol<-(dataset) 
+hist(chol$"Total Gross Theaters2", main="Total Gross Theaters2", xlab="Passengers",border="black", col="yellow")
+--lines(density(chol$"Total Gross Theaters2")) 
+
+R Script Chart 3 :
+
+Drag field 
+	Total.Gross.Theathers, 
+	Total.Gross.Theathers2, 
+	Revenue,
+	Open Theatre
+ 
+require("corrplot") 
+library(corrplot) 
+M <-cor(dataset) 
+corrplot(M, method = "number", tl.cex=0.6, tl.srt = 45, tl.col = "black", type= "lower", order="hclust") 
+
+
+
+library(ggplot2)
+
+setwd("Z:/powerBI") * locate your file moviedata only with folder
+
+
+In R Script
+
+library (ggplot2)      
+ggplot(data = dataset)
+  geom_bar(aes(x = dataset$sex),stat = 'count')

@@ -1,0 +1,19 @@
+Power BI Installation Link
+https://www.microsoft.com/en-in/download/details.aspx?id=58494
+
+OData Link
+https://services.odata.org/v2/northwind/northwind.svc/
+
+Dax Documentation
+https://dax.guide/st/order-by/
+
+
+M query language
+https://docs.microsoft.com/en-us/powerquery-m/
+
+DAX STUDIO
+https://daxstudio.org/downloads/
+
+
+https://docs.microsoft.com/en-us/power-bi/collaborate-share/service-connect-excel-power-bi-datasets
+
