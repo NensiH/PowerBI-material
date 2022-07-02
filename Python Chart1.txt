@@ -1,0 +1,141 @@
+Dataset 
+	Movie dataset
+	tip dataset
+	Master chart in python
+
+
+To Load the data into Power BI Through Python Script
+
+Go To Home --> Get Data -> Others -> python Script
+
+In Script Enter Below Code
+
+import pandas as pd
+my_data = pd.read_csv("C:\\Users\\Administrator\\Desktop\\tips.csv")
+
+
+
+-------------------------------------------------------------------------------------
+					PYTHON CHART
+-------------------------------------------------------------------------------------
+
+Check Python Setup :
+
+python --version
+pip install matplotlib 
+
+-------------------------------------------------------------------------------------
+Step 1 : 
+	Upload tip dataset into Power BI Desktop
+Step 2 :
+	Click on Python Visual 
+Step 3 :
+	Then Bring smoker, tip fields onto Values
+
+Step 4 :
+	
+	Run Below Query in Python Script Editor 
+Python Chart 1 :
+
+import matplotlib.pyplot as plt
+import seaborn as sns
+sns.catplot(x="smoker", y="tip", order=["No", "Yes"], data=dataset);
+plt.show() 
+
+Python Chart 2 :
+
+Step 1 : 
+	Upload movieset dataset into Power BI Desktop
+
+Step 2 : 
+	Drag field 
+	Total.Gross.Theaters2 
+	Revenue
+
+Step 3 :
+	Run Below Query in Python Script Editor 
+
+import matplotlib.pyplot as plt 
+import seaborn as sns 
+sns.violinplot(x='Revenue',y='Total Gross Theaters2',data=dataset) 
+plt.show() 
+
+
+Refer master Charts in Python cheatsheet for other Visuals
+
+
+----------------------------------------------------------------------------------------
+
+
+RSTUDIO TO DOWNLOAD
+https://cran.r-project.org/bin/windows/base/
+
+Step 1 : Install RStudio from 
+https://www.rstudio.com/products/rstudio/download/#download
+
+Step 2 :
+	Open Rstudio
+	Type : install.packages('ggplot2')
+	Type : install.packages('corrplot2)
+	Type : install.packages('plotrix)
+ 
+----------------------------------------------------------------------------------------------
+Chart 1 :
+
+x <- c(7, 15, 23, 12, 44, 56, 32)
+barplot(x, xlab = "sample data",
+        ylab = "Count", col = "white",
+        col.axis = "darkgreen",
+        col.lab = "darkgreen")
+
+
+Chart 2 :
+library(plotrix)
+
+# defining vector x with number of articles
+x <- c(210, 450, 250, 100, 50, 90)
+
+# defining labels for each value in x
+names(x) <- c("Algo", "DS", "Java", "C", "C++", "Python")
+
+# creating pie chart
+pie3D(x, labels = names(x), col = "white",
+main = "Pie Chart",
+labelcol = "darkgreen", col.main = "darkgreen")
+
+R Script Chart 3 :
+
+Drag Field :
+	Total.Gross.Theathers, 
+	Total.Gross.Theathers2 
+
+chol<-(dataset) 
+hist(chol$"Total Gross Theaters2", main="Total Gross Theaters2", xlab="Passengers",border="black", col="yellow")
+--lines(density(chol$"Total Gross Theaters2")) 
+
+R Script Chart 4 :
+
+Drag field 
+	Total.Gross.Theathers, 
+	Total.Gross.Theathers2, 
+	Revenue,
+	Open Theatre
+ 
+require("corrplot") 
+library(corrplot) 
+M <-cor(dataset) 
+corrplot(M, method = "number", tl.cex=0.6, tl.srt = 45, tl.col = "black", type= "lower", order="hclust") 
+
+
+library(ggplot2)
+
+setwd("Z:/powerBI") * locate your file moviedata only with folder
+
+
+
+
+
+
+
+
+
